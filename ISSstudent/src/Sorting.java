@@ -169,10 +169,10 @@ public static void insertionSort(int a[]){
     private void btnbubbleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbubbleActionPerformed
         //clear list
         model.clear();
-        long stime = System.nanoTime();
+        double stime = System.currentTimeMillis();
         bubbleSort(nums);
-        long etime = (System.nanoTime() - stime)/1000000000;
-        JOptionPane.showMessageDialog(this, "Time it took: " + etime);
+        double etime = System.currentTimeMillis() - stime;
+        JOptionPane.showMessageDialog(this, "Time it took: " + etime/1000);
         //rebuild list
         for (int x = 0;x < nums.length;x ++){
             model.addElement(nums[x]);
@@ -182,8 +182,11 @@ public static void insertionSort(int a[]){
     private void btnselectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnselectionActionPerformed
         //clear list
         model.clear();
+        double stime = System.currentTimeMillis();
         selectionSort(nums);
         //rebuild list
+        double etime = System.currentTimeMillis() - stime;
+        JOptionPane.showMessageDialog(this, "Time it took: " + etime/1000);
         for (int x = 0;x < nums.length;x ++){
             model.addElement(nums[x]);
         }
@@ -192,8 +195,11 @@ public static void insertionSort(int a[]){
     private void btninsertionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertionActionPerformed
         //clear list
         model.clear();
+        double stime = System.currentTimeMillis();
         insertionSort(nums);
         //rebuild list
+        double etime = System.currentTimeMillis() - stime;
+        JOptionPane.showMessageDialog(this, "Time it took: " + etime/1000);
         for (int x = 0;x < nums.length;x ++){
             model.addElement(nums[x]);
         }
